@@ -41,22 +41,6 @@ resource "aws_security_group" "elb" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-# SSH access from anywhere
-  ingress {
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  # Internal App access from anywhere
-  ingress {
-    from_port   = 8888
-    to_port     = 8888
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
   # HTTPS access from anywhere
   ingress {
     from_port   = 443
@@ -85,6 +69,14 @@ resource "aws_security_group" "default" {
   ingress {
     from_port   = 22
     to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  # RDP access from anywhere
+  ingress {
+    from_port   = 3389
+    to_port     = 3389
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
