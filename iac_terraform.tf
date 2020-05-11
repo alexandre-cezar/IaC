@@ -81,6 +81,14 @@ resource "aws_security_group" "default" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  # MySQL access from anywhere
+  ingress {
+    from_port   = 1434
+    to_port     = 1434
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   # 8888 access from anywhere
   ingress {
     from_port   = 8888
