@@ -81,6 +81,17 @@ resource "aws_security_group" "default" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+<<<<<<< Updated upstream
+=======
+  # MySQL access from anywhere
+  ingress {
+    from_port   = 3306
+    to_port     = 3306
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+>>>>>>> Stashed changes
   # 8888 access from anywhere
   ingress {
     from_port   = 8888
