@@ -16,6 +16,7 @@ terraform_version: 0.11
 # branch root directory 
 # The value for variable_values is an array of name/value pairs 
 # that identify the input variables your template uses.
+# .
 				
 terraform_011_parameters:
 	variable_files:
